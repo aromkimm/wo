@@ -31,6 +31,25 @@ const Detail = ({ data, pageContext }) => {
   const imgSize = (itemHeight >= itemWidth ? itemWidth : itemHeight) * 0.88
   const item = data.dataJson.items.find(item => item.name === pageContext.itemName)
 
+  const controlMoreItems = event => {
+    let container = document.querySelector('.more ul')
+    let prev = document.querySelector('.prev')
+    let next = document.querySelector('.next') 
+    let itemWidth = container.firstElementChild.clientWidth + 1
+
+    switch (event.target.dataset.type) {
+      case 'prev': container.scrollTo(container.scrollLeft - itemWidth, 0); break
+      case 'next': container.scrollTo(container.scrollLeft + itemWidth, 0); break
+      default:
+        prev && container.scrollLeft > 0 
+          ? prev.classList.remove('hide')
+          : prev.classList.add('hide')
+        next && (container.scrollLeft + container.clientWidth) < container.scrollWidth 
+          ? next.classList.remove('hide') 
+          : next.classList.add('hide')
+    }
+  }
+
   return (
   <div>
     <Header menuList={pageContext.menuList} background={true} />
@@ -63,12 +82,12 @@ const Detail = ({ data, pageContext }) => {
             <div className="colors">
               <span>○ colors: </span>
               {
-                item.colors.map(row => (
-                  <ul>
+                item.colors.map((row, index) => (
+                  <ul key={index}>
                     {
                       row.map(line => (
-                        <li style={{backgroundColor: line}}>
-                          <div class="box" />
+                        <li style={{backgroundColor: line}} key={line}>
+                          <div className="box" />
                         </li>
                       ))
                     }
@@ -80,14 +99,16 @@ const Detail = ({ data, pageContext }) => {
 			  </div>
 	    </div>
       <div className="more">
-		    <ul>
+		    <ul onScroll={controlMoreItems}>
           {
             data.dataJson.items.map(item => {
               if (item.name !== pageContext.itemName) {
                 return (
                   <li key={item.id}>
                     <Img fluid={item.images[1].childImageSharp.fluid} />
-                    <div className="box"><div className="text">{item.id}</div></div>
+                    <div className="box">
+                      <div className="text">{item.id}</div>
+                    </div>
                   </li>
                 )
               }
@@ -95,8 +116,14 @@ const Detail = ({ data, pageContext }) => {
           }
         </ul>
         <div className="arrow">
-		      <div data-type="prev" className="prev hide"></div>
-		      <div data-type="next" className={`next${data.dataJson.items.length > 5 ? '': ' hide'}`}></div>
+		      <div
+            data-type="prev"
+            className="prev hide"
+            onClick={controlMoreItems} />
+		      <div
+            data-type="next"
+            className={`next${data.dataJson.items.length > 5 ? '': ' hide'}`}
+            onClick={controlMoreItems} />
 		    </div>
       </div>
     </section>
