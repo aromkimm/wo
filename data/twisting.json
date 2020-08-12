@@ -1,0 +1,77 @@
+{
+  "index": 2,
+  "category": "twisting",
+  "description": "자연스럽게, 그러나 강렬하게 휘감아 오르며 완성되는 완벽한 조화",
+  "items": [
+    {
+      "name": "TWISTING 01",
+      "id": "9b62e3_395234aafb344f4192b6c1939571fa91~mv2 copy",
+      "detail": "우측에서 시작해 좌측으로 가볍게 뻗어나가는 형태의 물줄기로, 위로 퍼지듯 상승하는 여러개의 물방울이 청량한 효과를 더해줍니다.",
+      "drops": "78",
+      "images": ["./images/twisting/01.jpg", "./images/twisting/01_hover.jpg"],
+      "colors": [["#cbdeed", "#8fc9ee", "#0a3869", "#1c1a25"]]
+    },
+    {
+      "name": "TWISTING 02",
+      "id": "unnamed-8 copy",
+      "detail": "굵고 넓은 형태로 1회 크게 휘어지며 마치 파도처럼 C자형으로 돌아가는 물줄기는 확대된 이미지와도 조화를 이룹니다.",
+      "drops": "0",
+      "images": ["./images/twisting/02.jpg", "./images/twisting/02_hover.jpg"],
+      "colors": [
+        ["#c7e1fc", "#c7dcef", "#bde0fe", "#e4eaff"],
+        ["#c9d5ff", "#006090"]
+      ]
+    },
+    {
+      "name": "TWISTING 03",
+      "id": "0354bd88b480262f9a21c7ac239a5699",
+      "detail": "닫혀있는 구조의 원형으로 흐르는 물이 프레임의 역할을 합니다. 큰 줄기로부터 갈라져 흐르는 가느다란 몇 개의 물줄기가 전체적인 흐름에 변주를 줍니다.",
+      "drops": "221",
+      "images": ["./images/twisting/03.jpg", "./images/twisting/03_hover.jpg"],
+      "colors": [
+        ["#dae8e8", "#e7f7f4", "#cfeee9", "#b9e0ec"],
+        ["#97d3d2", "#73c1d8", "#2ea6a5"]
+      ]
+    },
+    {
+      "name": "TWISTING 04",
+      "id": "4d4fc600c39891c0787241bbbf5bc093",
+      "detail": "크게 3회 휘어지는 물줄기가 짧고 긴 곡선을 이루며 중심에 위치한 이미지를 유연하게 감싸줍니다.",
+      "drops": "51",
+      "images": ["./images/twisting/04.jpg", "./images/twisting/04_hover.jpg"],
+      "colors": [["#e0e0e0", "#c1c1c1", "#a4a4a4", "#515151"]]
+    },
+    {
+      "name": "TWISTING 05",
+      "id": "44ac6add1cdd3eabeb0f47a821c1bb82 copy",
+      "detail": "이미지를 휘감으며 상승하는 형태로 면,선,점 형태의 물이 균형있게 조화를 이루는 모습으로 구성되었습니다.",
+      "drops": "90",
+      "images": ["./images/twisting/05.jpg", "./images/twisting/05_hover.jpg"],
+      "colors": [["#d3d3d3", "#b1b1b1", "#757575", "#323232"]]
+    },
+    {
+      "name": "TWISTING 06",
+      "id": "71PW9JnCwHL._AC_UY780_",
+      "detail": "길쭉하게 뻗어오르며 2회 휘어져 S자형 곡선을 그리는 유려한 형태의 물줄기입니다.",
+      "drops": "",
+      "images": ["./images/twisting/06.jpg", "./images/twisting/06_hover.jpg"],
+      "colors": [["#e9f4fa", "#c5effe", "#b5d2da", "#2578a4"]]
+    },
+    {
+      "name": "TWISTING 07",
+      "id": "191-1911630_more-views-water-splash.png_waifu2x_photo_noise2_scale_tta_1",
+      "detail": "중간에서 크게 1회 휘어져 C자형으로 돌아가는 지점을 기준으로 여러개의 물방울이 퍼져나가 생기 있는 느낌을 줍니다.",
+      "drops": "49",
+      "images": ["./images/twisting/07.jpg", "./images/twisting/07_hover.jpg"],
+      "colors": [["#dff3fe", "#a6cbdb", "#34789d", "#1d5c85"], ["#14303e"]]
+    },
+    {
+      "name": "TWISTING 08",
+      "id": "AAFB_131697189526560638L3Jp0OhpVM",
+      "detail": "닫혀있는 구조의 원형으로 흐르는 물이 프레임의 역할을 합니다. 중간 지점에서 두 개의 물줄기가 만나듯 물방울이 주변으로 흩어지며 청량감을 더해줍니다.",
+      "drops": "23",
+      "images": ["./images/twisting/08.jpg", "./images/twisting/08_hover.jpg"],
+      "colors": [["#d4d8db", "#e1eef5", "#4d6983", "#384b5d"]]
+    }
+  ]
+}

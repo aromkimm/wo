@@ -1,0 +1,72 @@
+{
+  "index": 4,
+  "category": "deep",
+  "description": "깊은 물 속에서도 선명하게 전해지는 깊이 있는 아름다움",
+  "items": [
+    {
+      "name": "DEEP 01",
+      "id": "0030060002242 copy",
+      "detail": "수평을 이루는 수면이 중간 지점에서 오목하게 들어가며 가운데에 배치될 이미지를 더욱 돋보이게 합니다.",
+      "drops": "198",
+      "images": ["./images/deep/01.jpg", "./images/deep/01_hover.jpg"],
+      "colors": [["#ecf5fa", "#d3e7f0", "#8fd8eb", "#457cb4"]]
+    },
+    {
+      "name": "DEEP 02",
+      "id": "89aa4f010e2357cba27554952119289e_1480305659_17",
+      "detail": "물 속으로 빠져드는 이미지의 모습을 연출 시켜주는 오너먼트입니다. 수면 위로 튀어 오르는 물과 이미지를 따라 물 속까지 이어지는 물기둥이 무게감을 표현합니다.",
+      "drops": "300+",
+      "images": ["./images/deep/02.jpg", "./images/deep/02_hover.jpg"],
+      "colors": [
+        ["#deebfe", "#b9cbe4", "#afc5ec", "#7397c9"],
+        ["#4f7eb2", "#285f95", "#1f3247"]
+      ]
+    },
+    {
+      "name": "DEEP 03",
+      "id": "HTB1_OlZAkKWBuNjy1zjq6AOypXat",
+      "detail": "이미지 하단에서 일렁이고 있는 듯한 모습으로 배치되어, 이미지 영역에 직접적으로 개입하지 않으면서 이미지를 효과적으로 강조합니다.",
+      "drops": "45",
+      "images": ["./images/deep/03.jpg", "./images/deep/03_hover.jpg"],
+      "colors": [["#eafbff", "#99d0d3", "#9ba9cc", "#375299"]]
+    },
+    {
+      "name": "DEEP 04",
+      "id": "eb12a4f3",
+      "detail": "수심이 깊어질수록 색이 옅어지며 전체 이미지와 자연스러운 조화를 이룹니다. 수면 위로 튀어 오르는 물과 이미지를 따라 물 속까지 이어지는 물기둥이 무게감을 표현합니다.",
+      "drops": "177",
+      "images": ["./images/deep/04.jpg", "./images/deep/04_hover.jpg"],
+      "colors": [
+        ["#e4f7fe", "#d3e9f7", "#a5d7f3", "#4aafe7"],
+        ["#8cb4d1", "#89a6bd", "#1968a3", "#124c7a"]
+      ]
+    },
+    {
+      "name": "DEEP 05",
+      "id": "16mm-15m-pvc-Tape-Adhesive-Tape-Electrical-ad-Insulation-Flame-Retardant-electrical-insulating-tape-waterproof-tape",
+      "detail": "이미지가 물에 반쯤 잠긴 채 떠있는 모습을 연출 시켜주는 오너먼트입니다. 수면 아래로 퍼지는 공기방울이 깊은 수심을 암시합니다.",
+      "drops": "149",
+      "images": ["./images/deep/05.jpg", "./images/deep/05_hover.jpg"],
+      "colors": [["#eaeaea", "#d4d4d4", "#848389", "#5e5d63"]]
+    },
+    {
+      "name": "DEEP 06",
+      "id": "13401680024101852_2 copy",
+      "detail": "수면을 직접적으로 보여주지 않으면서 깊은 물 속에 들어가 있는 듯한 장면을 연출하는 오너먼트입니다. 이미지를 중심으로 공기를 머금은 물방울들이 분포되어 현장감을 더해줍니다.",
+      "drops": "117",
+      "images": ["./images/deep/06.jpg", "./images/deep/06_hover.jpg"],
+      "colors": [
+        ["#e7fcff", "#cff8fe", "#b1d1e3", "#9dc4d5"],
+        ["#63a3c7", "#3a89aa"]
+      ]
+    },
+    {
+      "name": "DEEP 07",
+      "id": "ifox-speaker",
+      "detail": "물 속으로 빠져드는 이미지의 모습을 연출 시켜주는 오너먼트입니다. 수면 위로 튀어오르는 물이 이미지의 무게감을 표현합니다.",
+      "drops": "24",
+      "images": ["./images/deep/07.jpg", "./images/deep/07_hover.jpg"],
+      "colors": [["#e7f5f8", "#a3afbb", "#8194a5", "#333b42"]]
+    }
+  ]
+}

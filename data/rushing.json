@@ -1,0 +1,45 @@
+{
+  "index": 3,
+  "category": "rushing",
+  "description": "강렬하게 밀려와 섬세하게 휩싸고 자연스럽게 어우러지는",
+  "items": [
+    {
+      "name": "RUSHING 01",
+      "id": "3dd328af46a4f1ebf2059c144f336807",
+      "detail": "좌측 하단에서부터 대각선 방향으로 밀려올라오는 형태의 오너먼트로, 해변의 파도를 연상시킵니다.",
+      "drops": "17",
+      "images": ["./images/rushing/01.jpg", "./images/rushing/01_hover.jpg"],
+      "colors": [
+        ["#f6f9ff", "#f1f4f9", "#efedf2", "#d7d7e3"],
+        ["#cbced7", "#a2a2ac"]
+      ]
+    },
+    {
+      "name": "RUSHING 02",
+      "id": "339566-one-eyeland-voss-water-splash-by-studio-lugui",
+      "detail": "측면에서 밀려오는 물줄기가 이미지와 만나는 지점부터 안쪽으로 휘감기며 감싸는 듯한 모습이 연출됩니다.",
+      "drops": "36",
+      "images": ["./images/rushing/02.jpg", "./images/rushing/02_hover.jpg"],
+      "colors": [["#dcedfd", "#ced5e5", "#d0dcf4", "#a9b3cc"], ["#a7b8d2"]]
+    },
+    {
+      "name": "RUSHING 03",
+      "id": "bd16604b6ddc0a9f209d644725095b80 copy",
+      "detail": "프레임 바깥으로부터 밀려오는 물이 눈 앞에서 펼쳐지는 풍경처럼 선명하고 생동감 있게 화면을 채웁니다. 근접한 시점으로 두께와 물결까지 섬세하게 관찰됩니다.",
+      "drops": "16",
+      "images": ["./images/rushing/03.jpg", "./images/rushing/03_hover.jpg"],
+      "colors": [
+        ["#f3f3f3", "#e3e3e3", "#d8d8d8", "#bbbab5"],
+        ["#888679", "#4b4d48"]
+      ]
+    },
+    {
+      "name": "RUSHING 04",
+      "id": "daily-superfoliant-with-water-splash-480px_orig copy",
+      "detail": "측면으로부터 밀려오는 물줄기가 이미지와 만나는 지점에서 튀기듯 퍼져나가며 역동성을 더해줍니다.",
+      "drops": "71",
+      "images": ["./images/rushing/04.jpg", "./images/rushing/04_hover.jpg"],
+      "colors": [["#ededed", "#dbdbdb", "#afafaf", "#575757"]]
+    }
+  ]
+}

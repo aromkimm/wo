@@ -1,0 +1,91 @@
+{
+  "index": 1,
+  "category": "blasting",
+  "description": "땅 끝에서 솟아오르는 깨끗하고 순수한 에너지",
+  "items": [
+    {
+      "name": "BLASTING 01",
+      "id": "20180203_s",
+      "detail": "깊은 곳에서부터 솟는 듯 유려한 곡선을 그리며 길게 뻗어오르는 물줄기가 이미지를 감싸는 형태입니다.",
+      "drops": "42",
+      "images": ["./images/blasting/01.jpg", "./images/blasting/01_hover.jpg"],
+      "colors": [
+        ["#f9fef8", "#edf6f9", "#d1e9ec", "#daedf3"],
+        ["#a3d2d8", "#e4f2f5", "#415456"]
+      ]
+    },
+    {
+      "name": "BLASTING 02",
+      "id": "unnamed-14",
+      "detail": "여러개의 물방울이 각각 다른 높이로 상승합니다. 솟아오르는 물방울을 중심으로 퍼져나가는 물결 형태도 함께 제공됩니다.",
+      "drops": "7",
+      "images": ["./images/blasting/02.jpg", "./images/blasting/02_hover.jpg"],
+      "colors": [["#d0edfb", "#a1daf7", "#85bbbc", "#80a8aa"], ["#0a7679"]]
+    },
+    {
+      "name": "BLASTING 03",
+      "id": "R720x0.q80",
+      "detail": "바닥에서부터 원기둥을 감싸는듯한 형태로 곧게 솟아오릅니다. 물줄기가 끝나는 지점으로 갈수록 여러개의 물방울로 분산됩니다.",
+      "drops": "39",
+      "images": ["./images/blasting/03.jpg", "./images/blasting/03_hover.jpg"],
+      "colors": [
+        ["#f2f7fb", "#d0e4ee", "#c6dfe6", "#a0c9dd"],
+        ["#7aaec3", "#316573"]
+      ]
+    },
+    {
+      "name": "BLASTING 04",
+      "id": "unnamed-12",
+      "detail": "물방울을 넓게 퍼뜨리며 강하게 튀어 오르는 물줄기입니다. 이미지를 뒷쪽으로 감싸 앞이 트여있는 형태로, 이미지의 정면을 강조해 줍니다.",
+      "drops": "84",
+      "images": ["./images/blasting/04.jpg", "./images/blasting/04_hover.jpg"],
+      "colors": [
+        ["#e8f3f9", "#d5e7f2", "#9db5c8", "#d1e7f2"],
+        ["#abcfe5", "#3b6b91"]
+      ]
+    },
+    {
+      "name": "BLASTING 05",
+      "id": "6mod-LivingFresh-Cleanser-bottle-in-a-water-splash copy",
+      "detail": "양 옆으로 갈라지며 솟아오르는 가느다란 두 갈래의 물줄기가 여러 방울로 쪼개지며 하트 모양을 그리듯 이미지를 중심으로 다시 모입니다.",
+      "drops": "77",
+      "images": ["./images/blasting/05.jpg", "./images/blasting/05_hover.jpg"],
+      "colors": [["#bcdde5", "#78bbcb", "#5da1b8", "#254049"]]
+    },
+    {
+      "name": "BLASTING 06",
+      "id": "47cbdc1a-dfaf-4c5b-8969-ab80115e70c1",
+      "detail": "낮은 높이지만, 넓은 면적으로 치솟는 물입니다. 바깥으로 퍼져나가는 형태로 중심에 위치한 이미지를 돋보이게 합니다.",
+      "drops": "45",
+      "images": ["./images/blasting/06.jpg", "./images/blasting/06_hover.jpg"],
+      "colors": [
+        ["#d0e5f1", "#c2dffd", "#a0cae2", "#5ba2c0"],
+        ["#18597f", "#24404c"]
+      ]
+    },
+    {
+      "name": "BLASTING 07",
+      "id": "6061",
+      "detail": "튀어오르며 발생하는 가느다란 물줄기들과 커다란 물방울이 근접한 거리에서 보는 듯 생동감 있게 이미지를 꾸며줍니다.",
+      "drops": "52",
+      "images": ["./images/blasting/07.jpg", "./images/blasting/07_hover.jpg"],
+      "colors": [["#e3e3e3", "#b5b5b5", "#868686", "#4b4b4b"]]
+    },
+    {
+      "name": "BLASTING 08",
+      "id": "Bluetooth_shower_speaker1_2048x2048",
+      "detail": "하단에는 자유로운 형태의 곡선을 그리며 솟는 물이, 상단에는 그로부터 발생한 수십개의 물방울이 배치되어 이미지를 균형있게 장식합니다.",
+      "drops": "81",
+      "images": ["./images/blasting/08.jpg", "./images/blasting/08_hover.jpg"],
+      "colors": [["#e2f5fb", "#86cff0", "#8ebccc", "#166176"]]
+    },
+    {
+      "name": "BLASTING 09",
+      "id": "r-3_waifu2x_photo_noise3_scale_tta_1",
+      "detail": "부채처럼 펼쳐지듯 옆쪽과 뒷쪽으로 솟아오르는 물이 크고 작은 여러 개의 물방울을 발생시키며 역동적인 분위기를 연출합니다.",
+      "drops": "133",
+      "images": ["./images/blasting/09.jpg", "./images/blasting/09_hover.jpg"],
+      "colors": [["#e8e8e8", "#d5d5d5", "#c3c3c3", "#8f8f8f"]]
+    }
+  ]
+}
