@@ -1,7 +1,7 @@
 import React from 'react'
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-
+import { GlobalStateContext } from '../context/GlobalContextProvider'
 import Header from '../components/header'
 
 export const query = graphql`
@@ -26,9 +26,7 @@ export const query = graphql`
 `
 
 const Detail = ({ data, pageContext }) => {
-  const itemWidth = window.innerWidth / 2
-  const itemHeight = window.innerHeight - 115 // header 높이 빼기
-  const imgSize = (itemHeight >= itemWidth ? itemWidth : itemHeight) * 0.88
+  const state = useContext(GlobalStateContext)
   const item = data.dataJson.items.find(item => item.name === pageContext.itemName)
 
   const controlMoreItems = event => {
@@ -54,15 +52,15 @@ const Detail = ({ data, pageContext }) => {
   <div>
     <Header menuList={pageContext.menuList} background={true} />
     <section className="detail">
-      <div className="item" style={{height: `${itemHeight}px`}}>
+      <div className="item" style={{height: `${state.itemHeight}px`}}>
         <div className="img-box">
           <Img
             fluid={item.images[1].childImageSharp.fluid}
-            style={{width:`${imgSize}px`, height: `${imgSize}px`}}
+            style={{width:`${state.imgSize}px`, height: `${state.imgSize}px`}}
           />
         </div>
       </div>
-      <div className="item" style={{height: `${itemHeight}px`}}>
+      <div className="item" style={{height: `${state.itemHeight}px`}}>
         <div className="top">
           <h2>{item.name}</h2>
           <h3>{item.id}</h3>

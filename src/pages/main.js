@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 
+import {
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from '../context/GlobalContextProvider'
 import Header from '../components/header'
 import Popup from '../components/popup'
 
-let popupClosed = false
-
 const MainPage = ({ pageContext }) => {
-  const [popupVisible, setPopupVisible] = useState(!popupClosed)
-  const closePopup = () => {
-    setPopupVisible(!popupVisible)
-    popupClosed = true
-  }
+  const dispatch = useContext(GlobalDispatchContext)
+  const state = useContext(GlobalStateContext)
 
   return (
   <div>
@@ -33,7 +32,7 @@ const MainPage = ({ pageContext }) => {
                   backgroundPosition: 'center',
                   backgroundSize: 'cover',
                   transition: 'all .5s ease-in-out',
-                  opacity: `${popupVisible ? .2 : ''}`
+                  opacity: `${state.popupClosed ? '' : .2}`
                 }}
               />
             </Link>
@@ -44,8 +43,8 @@ const MainPage = ({ pageContext }) => {
     </section>
     {
       (() => {
-        if (popupVisible) {
-          return <Popup closePopup={closePopup} />
+        if (!state.popupClosed) {
+          return <Popup closePopup={() => dispatch({type: 'CLOSE_POPUP'})} />
         }
       })()
     }
