@@ -1,5 +1,5 @@
 import React, { useContext, useState, useRef } from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { GlobalStateContext } from '../context/GlobalContextProvider'
 import Header from '../components/header'
@@ -98,25 +98,34 @@ const Detail = ({ data, pageContext }) => {
           {
             data.dataJson.items.map(item => {
               if (item.name !== pageContext.itemName) {
+                const itemNameSplit = item.name.split(/\s/g)
                 return (
                   <li key={item.id}>
-                    <Img fluid={item.images[1].childImageSharp.fluid} />
-                    <div className="box">
-                      <div className="text">{item.id}</div>
-                    </div>
+                    <Link to={`/${itemNameSplit[0].toLowerCase()}/${itemNameSplit[1]}`}>
+                      <Img fluid={item.images[1].childImageSharp.fluid} />
+                      <div className="box">
+                        <div className="text">{item.id}</div>
+                      </div>
+                    </Link>
                   </li>
                 )
+              } else {
+                return null
               }
             })
           }
         </ul>
         <div className="arrow">
-		      <div
+		      <button
             className={`prev${isPrevVisible ? '': ' hide'}`}
-            onClick={() => controlMoreItems('prev')} />
-		      <div
+            onClick={() => controlMoreItems('prev')}>
+              이전
+            </button>
+		      <button
             className={`next${isNextVisible ? '': ' hide'}`}
-            onClick={() => controlMoreItems('next')} />
+            onClick={() => controlMoreItems('next')}>
+              다음
+            </button>
 		    </div>
       </div>
     </section>

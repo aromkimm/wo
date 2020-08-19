@@ -355,12 +355,13 @@ a {
     width: 100%;
   }
   .arrow {
-    div {
+    button {
       position: absolute;
       top: 50%;
       margin-top: -33px;
       width: 66px;
       height: 66px;
+      font-size: 0;
       background-repeat: no-repeat;
       background-position: center;
     }
