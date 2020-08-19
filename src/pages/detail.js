@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useState, useRef } from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import { GlobalStateContext } from '../context/GlobalContextProvider'
@@ -27,24 +27,21 @@ export const query = graphql`
 
 const Detail = ({ data, pageContext }) => {
   const state = useContext(GlobalStateContext)
+  const [isPrevVisible, setPrevVisible] = useState(false)
+  const [isNextVisible, setNextVisible] = useState(data.dataJson.items.length > 5)
+  const container = useRef()
   const item = data.dataJson.items.find(item => item.name === pageContext.itemName)
 
-  const controlMoreItems = event => {
-    let container = document.querySelector('.more ul')
-    let prev = document.querySelector('.prev')
-    let next = document.querySelector('.next') 
-    let itemWidth = container.firstElementChild.clientWidth + 1
+  const controlMoreItems = type => {
+    const c = container.current
+    const block = c.firstElementChild.clientWidth + 1
 
-    switch (event.target.dataset.type) {
-      case 'prev': container.scrollTo(container.scrollLeft - itemWidth, 0); break
-      case 'next': container.scrollTo(container.scrollLeft + itemWidth, 0); break
+    switch (type) {
+      case 'prev': c.scrollTo(c.scrollLeft - block, 0); break
+      case 'next': c.scrollTo(c.scrollLeft + block, 0); break
       default:
-        prev && container.scrollLeft > 0 
-          ? prev.classList.remove('hide')
-          : prev.classList.add('hide')
-        next && (container.scrollLeft + container.clientWidth) < container.scrollWidth 
-          ? next.classList.remove('hide') 
-          : next.classList.add('hide')
+        setPrevVisible(c.scrollLeft > 0)
+        setNextVisible((c.scrollLeft + c.clientWidth) < c.scrollWidth)
     }
   }
 
@@ -83,8 +80,8 @@ const Detail = ({ data, pageContext }) => {
                 item.colors.map((row, index) => (
                   <ul key={index}>
                     {
-                      row.map(line => (
-                        <li style={{backgroundColor: line}} key={line}>
+                      row.map(colorCode => (
+                        <li style={{backgroundColor: colorCode}} key={colorCode}>
                           <div className="box" />
                         </li>
                       ))
@@ -97,7 +94,7 @@ const Detail = ({ data, pageContext }) => {
 			  </div>
 	    </div>
       <div className="more">
-		    <ul onScroll={controlMoreItems}>
+		    <ul ref={container} onScroll={controlMoreItems}>
           {
             data.dataJson.items.map(item => {
               if (item.name !== pageContext.itemName) {
@@ -115,13 +112,11 @@ const Detail = ({ data, pageContext }) => {
         </ul>
         <div className="arrow">
 		      <div
-            data-type="prev"
-            className="prev hide"
-            onClick={controlMoreItems} />
+            className={`prev${isPrevVisible ? '': ' hide'}`}
+            onClick={() => controlMoreItems('prev')} />
 		      <div
-            data-type="next"
-            className={`next${data.dataJson.items.length > 5 ? '': ' hide'}`}
-            onClick={controlMoreItems} />
+            className={`next${isNextVisible ? '': ' hide'}`}
+            onClick={() => controlMoreItems('next')} />
 		    </div>
       </div>
     </section>

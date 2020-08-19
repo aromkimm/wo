@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import { GlobalStateContext } from '../context/GlobalContextProvider'
