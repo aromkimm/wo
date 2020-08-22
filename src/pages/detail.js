@@ -1,6 +1,7 @@
 import React, { useContext, useState, useRef } from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { magnify } from '../libs'
 import { GlobalStateContext } from '../context/GlobalContextProvider'
 import Header from '../components/header'
 
@@ -30,12 +31,14 @@ const Detail = ({ data, pageContext }) => {
   const [isPrevVisible, setPrevVisible] = useState(false)
   const [isNextVisible, setNextVisible] = useState(data.dataJson.items.length > 5)
   const container = useRef()
+  const magnifier = useRef()
+  const img = useRef()
   const item = data.dataJson.items.find(item => item.name === pageContext.itemName)
 
   const controlMoreItems = type => {
     const c = container.current
     const block = c.firstElementChild.clientWidth + 1
-
+    console.log(img)
     switch (type) {
       case 'prev': c.scrollTo(c.scrollLeft - block, 0); break
       case 'next': c.scrollTo(c.scrollLeft + block, 0); break
@@ -51,10 +54,14 @@ const Detail = ({ data, pageContext }) => {
     <section className="detail">
       <div className="item" style={{height: `${state.itemHeight}px`}}>
         <div className="img-box">
+          <div
+            ref={magnifier}
+            className="magnifier" />
           <Img
+            ref={img}
             fluid={item.images[1].childImageSharp.fluid}
             style={{width:`${state.imgSize}px`, height: `${state.imgSize}px`}}
-          />
+            onLoad={() => { magnify(img.current.imageRef.current, magnifier.current) }} />
         </div>
       </div>
       <div className="item" style={{height: `${state.itemHeight}px`}}>

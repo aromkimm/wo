@@ -243,13 +243,6 @@ a {
     justify-content: center;
     align-items: center;
   }
-  .magnifier {
-    position: absolute;
-    width: 60%;
-    height: 60%;
-    border-radius: 100%;
-    border: 1px solid #0000ff;
-  }
   .top {
     height: 174px;
     border-bottom: 1px solid #0000ff;
@@ -390,4 +383,12 @@ a {
     white-space: normal;
     word-break: break-word;
   }
+}
+
+.magnifier {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 100%;
+  border: 1px solid #0000ff;
 }
