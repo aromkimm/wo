@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import BackgroundImg from 'gatsby-background-image'
+import { slide } from '../libs'
 
 import {
   GlobalDispatchContext,
@@ -12,6 +13,8 @@ import Popup from '../components/popup'
 const MainPage = ({ pageContext }) => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
+  const images = useRef()
+  useEffect(() => slide(images.current))
 
   return (
     <StaticQuery
@@ -33,7 +36,14 @@ const MainPage = ({ pageContext }) => {
         <div>
           <Header menuList={pageContext.menuList} background={false} />
           <section style={{ paddingTop: 0 }}>
-            <ul id="images">
+            <ul
+              ref={images}
+              className="images"
+              style={{
+                transition: 'opacity .5s ease-in-out',
+                opacity: `${state.popupClosed ? '' : 0.2}`
+              }}
+            >
               {pageContext.menuList.map(menu => {
                 const category = menu.category
                 const img = data.allFile.nodes.find(node =>
@@ -46,11 +56,7 @@ const MainPage = ({ pageContext }) => {
                         fluid={img.childImageSharp.fluid}
                         style={{
                           width: '100%',
-                          height: '100vh',
-                          backgroundPosition: 'center',
-                          backgroundSize: 'cover',
-                          transition: 'all .5s ease-in-out',
-                          opacity: `${state.popupClosed ? '' : 0.2}`,
+                          height: '100%',
                         }}
                       />
                     </Link>
@@ -61,10 +67,12 @@ const MainPage = ({ pageContext }) => {
           </section>
           {(() => {
             if (!state.popupClosed) {
-              return <Popup closePopup={() => dispatch({ type: 'CLOSE_POPUP' })} />
+              return (
+                <Popup closePopup={() => dispatch({ type: 'CLOSE_POPUP' })} />
+              )
             }
           })()}
-      </div>
+        </div>
       )}
     />
   )

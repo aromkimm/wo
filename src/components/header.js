@@ -37,9 +37,7 @@ const Header = ({ menuList, background }) => (
                 key={menu.index}
                 to={`/${menu.category}`}
               >
-                <li data-menuanchor={menu.category}>
-                  {menu.category.toUpperCase()}
-                </li>
+                <li>{menu.category.toUpperCase()}</li>
               </Link>
             ))}
           </ul>
