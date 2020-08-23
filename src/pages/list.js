@@ -1,12 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
 import Header from '../components/header'
 import ItemList from '../components/itemList'
 
 export const query = graphql`
   query($category: String) {
-    dataJson(category: {eq: $category}) {
+    dataJson(category: { eq: $category }) {
       description
       items {
         name
@@ -27,13 +27,13 @@ const List = ({ data, pageContext }) => {
   const category = data.dataJson
 
   return (
-  <div>
-    <Header menuList={pageContext.menuList} background={true} />
-    <section className="list">
-      <marquee className="description">{category.description}</marquee>
-      <ItemList items={category.items} />
-    </section>
-  </div>
+    <div>
+      <Header menuList={pageContext.menuList} background={true} />
+      <section className="list">
+        <marquee className="description">{category.description}</marquee>
+        <ItemList items={category.items} />
+      </section>
+    </div>
   )
 }
 

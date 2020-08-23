@@ -1,5 +1,8 @@
-export function magnify (img, glass) {
-  var w, h, bw = 3, zoom = 2
+export function magnify(img, glass) {
+  var w,
+    h,
+    bw = 3,
+    zoom = 2
 
   /* Set background properties for the magnifier glass: */
   glass.style.backgroundImage = `url('${img.src}')`
@@ -16,7 +19,7 @@ export function magnify (img, glass) {
   glass.addEventListener('touchmove', moveMagnifier)
   img.addEventListener('touchmove', moveMagnifier)
 
-  function moveMagnifier (e) {
+  function moveMagnifier(e) {
     var pos, x, y
     /* Prevent any other actions that may occur when moving over the image */
     e.preventDefault()
@@ -25,19 +28,31 @@ export function magnify (img, glass) {
     x = pos.x
     y = pos.y
     /* Prevent the magnifier glass from being positioned outside the image: */
-    if (x > img.width - (w / zoom)) { x = img.width - (w / zoom) }
-    if (x < w / zoom) { x = w / zoom }
-    if (y > img.height - (h / zoom)) { y = img.height - (h / zoom) }
-    if (y < h / zoom) { y = h / zoom }
+    if (x > img.width - w / zoom) {
+      x = img.width - w / zoom
+    }
+    if (x < w / zoom) {
+      x = w / zoom
+    }
+    if (y > img.height - h / zoom) {
+      y = img.height - h / zoom
+    }
+    if (y < h / zoom) {
+      y = h / zoom
+    }
     /* Set the position of the magnifier glass: */
     glass.style.left = `${x - w}px`
     glass.style.top = `${y - h}px`
     /* Display what the magnifier glass "sees": */
-    glass.style.backgroundPosition = `-${(x * zoom) - w + bw}px -${(y * zoom) - h + bw}px`
+    glass.style.backgroundPosition = `-${x * zoom - w + bw}px -${
+      y * zoom - h + bw
+    }px`
   }
 
-  function getCursorPos (e) {
-    var a, x = 0, y = 0
+  function getCursorPos(e) {
+    var a,
+      x = 0,
+      y = 0
     e = e || window.event
     /* Get the x and y positions of the image: */
     a = img.getBoundingClientRect()
@@ -50,3 +65,5 @@ export function magnify (img, glass) {
     return { x, y }
   }
 }
+
+export function onePage() {}

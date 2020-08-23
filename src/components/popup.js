@@ -21,21 +21,23 @@ const Popup = ({ closePopup }) => {
         for (let i in desc) {
           let line = desc[i]
           !line
-            ? pos += 1
+            ? (pos += 1)
             : lines[pos]
-            ? lines[pos] += line
-            : lines[pos] = line
+            ? (lines[pos] += line)
+            : (lines[pos] = line)
         }
 
         return (
           <aside>
             <div className="inner">
-              {
-                lines.map((line, index) => (
-                  <div key={index} className="content">{line}</div>
-                ))
-              }
-              <button className="close" onClick={closePopup}>닫기</button>
+              {lines.map((line, index) => (
+                <div key={index} className="content">
+                  {line}
+                </div>
+              ))}
+              <button className="close" onClick={closePopup}>
+                닫기
+              </button>
             </div>
           </aside>
         )

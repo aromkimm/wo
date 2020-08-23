@@ -14,12 +14,13 @@ const Header = ({ menuList, background }) => (
       }
     `}
     render={data => (
-      <header style={{background: `${background ? '#fff': null}`}}>
+      <header style={{ background: `${background ? '#fff' : null}` }}>
         <h1>
           <Link to="/">
             <img
               src={`/${data.site.siteMetadata.logo}`}
-              alt={data.site.siteMetadata.title} />
+              alt={data.site.siteMetadata.title}
+            />
           </Link>
         </h1>
         <nav id="menu">
@@ -29,17 +30,18 @@ const Header = ({ menuList, background }) => (
             </Link>
           </ul>
           <ul>
-          {
-            menuList.map(menu => (
+            {menuList.map(menu => (
               <Link
                 activeClassName="active"
                 partiallyActive={true}
                 key={menu.index}
-                to={`/${menu.category}`}>
-                <li data-menuanchor={menu.category}>{menu.category.toUpperCase()}</li>
+                to={`/${menu.category}`}
+              >
+                <li data-menuanchor={menu.category}>
+                  {menu.category.toUpperCase()}
+                </li>
               </Link>
-            ))
-          }
+            ))}
           </ul>
         </nav>
       </header>

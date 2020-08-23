@@ -8,7 +8,10 @@
       "id": "tmp_b01d89b09241401e0f55641496d745883068view",
       "detail": "넓은 면과 여러 갈래의 줄기로 뻗어나오며 튀는 물이 이미지 중심으로 배치되어 시선을 집중시킵니다.",
       "drops": "67",
-      "images": ["./images/splashing/01.jpg", "./images/splashing/01_hover.jpg"],
+      "images": [
+        "./images/splashing/01.jpg",
+        "./images/splashing/01_hover.jpg"
+      ],
       "colors": [
         ["#eff4fa", "#d8e8f5", "#daf1ff", "#dceefa"],
         ["#b5cfe6", "#48525c"]
@@ -19,7 +22,10 @@
       "id": "garnier",
       "detail": "주변에 물방울을 흩뿌리며 이미지를 중심으로 날개를 펼치듯 양 옆으로 튀는 형태의 오너먼트입니다.",
       "drops": "72",
-      "images": ["./images/splashing/02.jpg", "./images/splashing/02_hover.jpg"],
+      "images": [
+        "./images/splashing/02.jpg",
+        "./images/splashing/02_hover.jpg"
+      ],
       "colors": [
         ["#f7f7f7", "#eeeeee", "#e9e9e9", "#d3d3d3"],
         ["#afafaf", "#5e5e5e", "#545454"]
@@ -30,7 +36,10 @@
       "id": "lombzo1525332210813_waifu2x_photo_noise2_scale_tta_1",
       "detail": "이미지 뒤에서 퍼지며 대각선 방향으로 꼬리를 그리는 올라오는 형태의 오너먼트로, 운동감이 느껴집니다.",
       "drops": "11",
-      "images": ["./images/splashing/03.jpg", "./images/splashing/03_hover.jpg"],
+      "images": [
+        "./images/splashing/03.jpg",
+        "./images/splashing/03_hover.jpg"
+      ],
       "colors": [["#cee1ea", "#9cc2d5", "#a3cfea", "#96cfea"], ["#3e4d55"]]
     },
     {
@@ -38,7 +47,10 @@
       "id": "unnamed-11_waifu2x_photo_noise2_scale_tta_1",
       "detail": "이미지의 중간 지점을 중심으로 짧고 넓게 퍼지며 튀는 오너먼트입니다. 바깥쪽을 향할수록 물방울로 쪼개져 퍼져나가 장식성을 강화합니다.",
       "drops": "139",
-      "images": ["./images/splashing/04.jpg", "./images/splashing/04_hover.jpg"],
+      "images": [
+        "./images/splashing/04.jpg",
+        "./images/splashing/04_hover.jpg"
+      ],
       "colors": [["#eefcfd", "#becfd4", "#a5b5c1", "#7d9fa8"], ["#4a6a83"]]
     },
     {
@@ -46,7 +58,10 @@
       "id": "unnamed-16",
       "detail": "이미지 뒤에서 여러 방향으로 뻗으며 자유로운 형태로 튀어 나가는 오너먼트입니다. 주변에 흩뿌려지는 다량의 물방울이 주목도를 더욱 높여줍니다.",
       "drops": "106",
-      "images": ["./images/splashing/05.jpg", "./images/splashing/05_hover.jpg"],
+      "images": [
+        "./images/splashing/05.jpg",
+        "./images/splashing/05_hover.jpg"
+      ],
       "colors": [["#f9f9f9", "#e9e9e9", "#d3d3d3", "#606060"]]
     }
   ]

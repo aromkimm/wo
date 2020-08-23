@@ -1,5 +1,5 @@
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../components/header'
 import ItemList from '../components/itemList'
@@ -27,7 +27,10 @@ const ListAll = ({ pageContext }) => (
       }
     `}
     render={data => {
-      const items = data.allDataJson.nodes.sort((a, b) => a.index - b.index).map(node => node.items).flat()
+      const items = data.allDataJson.nodes
+        .sort((a, b) => a.index - b.index)
+        .map(node => node.items)
+        .flat()
 
       return (
         <div>

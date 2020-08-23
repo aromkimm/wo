@@ -12,26 +12,23 @@ exports.createPages = async ({ actions, graphql }) => {
           }
         }
       }
-      allFile(filter: {name: {eq: "index"}, ext: {eq: ".png"}}) {
-        nodes {
-          publicURL
-          relativePath
-        }
-      }
     }
   `)
 
-  const allDataJson = result.data.allDataJson.nodes.sort((a, b) => a.index - b.index)
-  const menuList = allDataJson.map(node => ({index: node.index, category: node.category}))
+  const allDataJson = result.data.allDataJson.nodes.sort(
+    (a, b) => a.index - b.index
+  )
+  const menuList = allDataJson.map(node => ({
+    index: node.index,
+    category: node.category,
+  }))
   const itemList = allDataJson.map(node => node.items).flat()
-  const mainImgList = result.data.allFile.nodes
 
   actions.createPage({
     path: '/',
     component: path.resolve('./src/pages/main.js'),
     context: {
       menuList,
-      mainImgList 
     },
   })
 
@@ -39,7 +36,7 @@ exports.createPages = async ({ actions, graphql }) => {
     path: '/all',
     component: path.resolve('./src/pages/listAll.js'),
     context: {
-      menuList
+      menuList,
     },
   })
 
@@ -50,7 +47,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve('./src/pages/list.js'),
       context: {
         menuList,
-        category
+        category,
       },
     })
   })
@@ -63,7 +60,7 @@ exports.createPages = async ({ actions, graphql }) => {
       component: path.resolve('./src/pages/detail.js'),
       context: {
         menuList,
-        itemName
+        itemName,
       },
     })
   })

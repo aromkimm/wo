@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 export const GlobalStateContext = React.createContext()
 export const GlobalDispatchContext = React.createContext()
@@ -7,18 +7,21 @@ const initialState = {}
 initialState.popupClosed = false
 initialState.itemWidth = window.innerWidth / 2
 initialState.itemHeight = window.innerHeight - 115 // header 높이 빼기
-initialState.imgSize = (initialState.itemHeight >= initialState.itemWidth ? initialState.itemWidth : initialState.itemHeight) * 0.88
+initialState.imgSize =
+  (initialState.itemHeight >= initialState.itemWidth
+    ? initialState.itemWidth
+    : initialState.itemHeight) * 0.88
 
-function reducer (state, action) {
+function reducer(state, action) {
   switch (action.type) {
-    case "CLOSE_POPUP": {
+    case 'CLOSE_POPUP': {
       return {
         ...state,
-        popupClosed: true
+        popupClosed: true,
       }
     }
     default:
-      throw new Error("Bad Action Type")
+      throw new Error('Bad Action Type')
   }
 }
 

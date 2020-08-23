@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { Link } from 'gatsby'
+import { Link, StaticQuery, graphql } from 'gatsby'
+import BackgroundImg from 'gatsby-background-image'
 
 import {
   GlobalDispatchContext,
@@ -13,42 +14,59 @@ const MainPage = ({ pageContext }) => {
   const state = useContext(GlobalStateContext)
 
   return (
-  <div>
-    <Header menuList={pageContext.menuList} background={false} />
-    <section style={{paddingTop: 0}}>
-      <ul id="images">
-      {
-        pageContext.menuList.map(menu => {
-          const category = menu.category
-          const img = pageContext.mainImgList.find(node => node.relativePath.includes(category))
-          return (
-            <Link key={menu.index} to={`/${category}`}>
-              <li
-                data-menuanchor={category}
-                style={{
-                  backgroundImage: `url(${img.publicURL})`,
-                  width: '100%',
-                  height: '100vh',
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  transition: 'all .5s ease-in-out',
-                  opacity: `${state.popupClosed ? '' : .2}`
-                }}
-              />
-            </Link>
-          )
-        })
-      }
-      </ul>
-    </section>
-    {
-      (() => {
-        if (!state.popupClosed) {
-          return <Popup closePopup={() => dispatch({type: 'CLOSE_POPUP'})} />
+    <StaticQuery
+      query={graphql`
+        query {
+          allFile(filter: { name: { eq: "index" }, ext: { eq: ".png" } }) {
+            nodes {
+              relativeDirectory
+              childImageSharp {
+                fluid(maxWidth: 1366, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
-      })()
-    }
-  </div>
+      `}
+      render={data => (
+        <div>
+          <Header menuList={pageContext.menuList} background={false} />
+          <section style={{ paddingTop: 0 }}>
+            <ul id="images">
+              {pageContext.menuList.map(menu => {
+                const category = menu.category
+                const img = data.allFile.nodes.find(node =>
+                  node.relativeDirectory.includes(category)
+                )
+                return (
+                  <li data-menuanchor={category} key={menu.index}>
+                    <Link to={`/${category}`}>
+                      <BackgroundImg
+                        fluid={img.childImageSharp.fluid}
+                        style={{
+                          width: '100%',
+                          height: '100vh',
+                          backgroundPosition: 'center',
+                          backgroundSize: 'cover',
+                          transition: 'all .5s ease-in-out',
+                          opacity: `${state.popupClosed ? '' : 0.2}`,
+                        }}
+                      />
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </section>
+          {(() => {
+            if (!state.popupClosed) {
+              return <Popup closePopup={() => dispatch({ type: 'CLOSE_POPUP' })} />
+            }
+          })()}
+      </div>
+      )}
+    />
   )
 }
 
