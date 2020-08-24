@@ -1,7 +1,7 @@
 import React, { useContext, useState, useRef } from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { magnify } from '../libs'
+import Magnifier from '../libs/magnifier'
 import { GlobalStateContext } from '../context/GlobalContextProvider'
 import Header from '../components/header'
 
@@ -33,11 +33,12 @@ const Detail = ({ data, pageContext }) => {
     data.dataJson.items.length > 5
   )
   const container = useRef()
-  const magnifier = useRef()
+  const glass = useRef()
   const img = useRef()
   const item = data.dataJson.items.find(
     item => item.name === pageContext.itemName
   )
+  const magnifier = new Magnifier()
 
   const controlMoreItems = type => {
     const c = container.current
@@ -62,7 +63,7 @@ const Detail = ({ data, pageContext }) => {
       <section className="detail">
         <div className="item" style={{ height: `${state.itemHeight}px` }}>
           <div className="img-box">
-            <div ref={magnifier} className="magnifier" />
+            <div ref={glass} className="glass" />
             <Img
               ref={img}
               fluid={item.images[1].childImageSharp.fluid}
@@ -71,7 +72,7 @@ const Detail = ({ data, pageContext }) => {
                 height: `${state.imgSize}px`,
               }}
               onLoad={() => {
-                magnify(img.current.imageRef.current, magnifier.current)
+                magnifier.init(img.current.imageRef.current, glass.current)
               }}
             />
           </div>

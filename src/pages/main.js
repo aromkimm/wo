@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import { Link, StaticQuery, graphql } from 'gatsby'
 import BackgroundImg from 'gatsby-background-image'
-import { slide } from '../libs'
+import Slider from '../libs/slider'
 
 import {
   GlobalDispatchContext,
@@ -11,10 +11,18 @@ import Header from '../components/header'
 import Popup from '../components/popup'
 
 const MainPage = ({ pageContext }) => {
+  const [init, setInit] = useState(false)
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
   const images = useRef()
-  useEffect(() => slide(images.current))
+  const slider = new Slider()
+
+  useEffect(() => {
+    if (!init) {
+      setInit(true)
+      slider.init(images.current)
+    }
+  }, [init, slider])
 
   return (
     <StaticQuery
@@ -50,7 +58,7 @@ const MainPage = ({ pageContext }) => {
                   node.relativeDirectory.includes(category)
                 )
                 return (
-                  <li data-menuanchor={category} key={menu.index}>
+                  <li data-hash={category} key={menu.index}>
                     <Link to={`/${category}`}>
                       <BackgroundImg
                         fluid={img.childImageSharp.fluid}
