@@ -16,7 +16,7 @@ const Header = ({ menuList, background }) => (
     render={data => (
       <header style={{ background: `${background ? '#fff' : null}` }}>
         <h1>
-          <Link to="/">
+          <Link to={window.location.hash ? null : '/'}>
             <img
               src={`/${data.site.siteMetadata.logo}`}
               alt={data.site.siteMetadata.title}

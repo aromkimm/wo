@@ -1,35 +1,29 @@
 export default class Magnifier {
-  constructor () {
-    this.img = null
-    this.glass = null
-    this.w = null
-    this.h = null
-    this.bw = null
-    this.zoom = null
-
-    this.moveMagnifier = this.moveMagnifier.bind(this)
-  }
-
-  init (img, glass, zoom = 2, bw = 3) {
-    this.glass = glass
+  constructor (img, glass, zoom = 2, bw = 3) {
     this.img = img
-    this.zoom = zoom
-    this.bw = bw
+    this.glass = glass
     this.w = glass.offsetWidth / 2
     this.h = glass.offsetHeight / 2
+    this.bw = bw
+    this.zoom = zoom
 
+    this.moveMagnifier = this.moveMagnifier.bind(this)
+    this.init()
+  }
+
+  init () {
     /* Set background properties for the magnifier glass: */
-    glass.style.backgroundImage = `url('${img.src}')`
-    glass.style.backgroundRepeat = `no-repeat`
-    glass.style.backgroundSize = `${img.width * zoom}px ${img.height * zoom}px`
+    this.glass.style.backgroundImage = `url('${this.img.src}')`
+    this.glass.style.backgroundRepeat = `no-repeat`
+    this.glass.style.backgroundSize = `${this.img.width * this.zoom}px ${this.img.height * this.zoom}px`
     
     /* Execute a function when someone moves the magnifier glass over the image: */
-    glass.addEventListener('mousemove', this.moveMagnifier)
-    img.addEventListener('mousemove', this.moveMagnifier)
+    this.glass.addEventListener('mousemove', this.moveMagnifier)
+    this.img.addEventListener('mousemove', this.moveMagnifier)
 
     /*and also for touch screens:*/
-    glass.addEventListener('touchmove', this.moveMagnifier)
-    img.addEventListener('touchmove', this.moveMagnifier)
+    this.glass.addEventListener('touchmove', this.moveMagnifier)
+    this.img.addEventListener('touchmove', this.moveMagnifier)
   }
 
   moveMagnifier (e) {

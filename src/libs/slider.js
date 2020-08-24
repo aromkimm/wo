@@ -1,40 +1,35 @@
 export default class Slider {
-  constructor () {
-    this.wrapper = null
-    this.items = null
-    this.height = null
-    this.currIdx = null
+  constructor (wrapper, startIdx = 0) {
+    this.wrapper = wrapper
+    this.items = wrapper.children
+    this.height = wrapper.clientHeight + 1
+    this.currIdx = startIdx
     this.isScroll = false
 
     this.wheelHandler = this.wheelHandler.bind(this)
     this.transitionendHandler = this.transitionendHandler.bind(this)
+    this.init()
   }
 
-  init (wrapper, startIdx = 0) {
-    let items = wrapper.children
-    let height = wrapper.clientHeight + 1
-    for (let i = 0, max = items.length; i < max; i++) {
-      let item = items[i]
+  init () {
+    for (let i = 0, max = this.items.length; i < max; i++) {
+      let item = this.items[i]
       // 다음 아이템들
-      if (i > startIdx) {
-        item.style.transform = `translateY(${height}px)`
+      if (i > this.currIdx) {
+        item.style.transform = `translateY(${this.height}px)`
         continue
       }
       // 현재 아이템
-      if (i === startIdx) {
+      if (i === this.currIdx) {
         item.style.opacity = '1'
         continue
       }
       // 직전 아이템
-      if (i === (startIdx - 1)) {
+      if (i === (this.currIdx - 1)) {
         item.style.opacity = '0.2'
         continue
       }
     }
-    this.wrapper = wrapper
-    this.items = items
-    this.height = height
-    this.currIdx = startIdx
     this.setHashname()
     this.wrapper.addEventListener('wheel', this.wheelHandler)
   }

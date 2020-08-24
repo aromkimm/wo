@@ -29,21 +29,15 @@ export const query = graphql`
 const Detail = ({ data, pageContext }) => {
   const state = useContext(GlobalStateContext)
   const [isPrevVisible, setPrevVisible] = useState(false)
-  const [isNextVisible, setNextVisible] = useState(
-    data.dataJson.items.length > 5
-  )
+  const [isNextVisible, setNextVisible] = useState(data.dataJson.items.length > 5)
   const container = useRef()
   const glass = useRef()
   const img = useRef()
-  const item = data.dataJson.items.find(
-    item => item.name === pageContext.itemName
-  )
-  const magnifier = new Magnifier()
+  const item = data.dataJson.items.find(item => item.name === pageContext.itemName)
 
   const controlMoreItems = type => {
     const c = container.current
     const block = c.firstElementChild.clientWidth + 1
-    console.log(img)
     switch (type) {
       case 'prev':
         c.scrollTo(c.scrollLeft - block, 0)
@@ -72,7 +66,7 @@ const Detail = ({ data, pageContext }) => {
                 height: `${state.imgSize}px`,
               }}
               onLoad={() => {
-                magnifier.init(img.current.imageRef.current, glass.current)
+                new Magnifier(img.current.imageRef.current, glass.current)
               }}
             />
           </div>

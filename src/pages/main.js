@@ -15,14 +15,13 @@ const MainPage = ({ pageContext }) => {
   const dispatch = useContext(GlobalDispatchContext)
   const state = useContext(GlobalStateContext)
   const images = useRef()
-  const slider = new Slider()
 
   useEffect(() => {
     if (!init) {
       setInit(true)
-      slider.init(images.current)
+      new Slider(images.current)
     }
-  }, [init, slider])
+  }, [init])
 
   return (
     <StaticQuery
