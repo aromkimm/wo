@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import { navigate, Link, StaticQuery, graphql } from 'gatsby'
 
 const Header = ({ menuList, background }) => {
   const [hash, setHash] = useState(null)
@@ -26,31 +26,34 @@ const Header = ({ menuList, background }) => {
       `}
       render={data => (
         <header style={{ background: `${background ? '#fff' : null}` }}>
-          <h1>
-            <Link to={window.location.hash ? null : '/'}>
-              <img
-                src={`/${data.site.siteMetadata.logo}`}
-                alt={data.site.siteMetadata.title}
-              />
-            </Link>
+          <h1 onClick={() => {
+            hash
+              ? navigate(`#${hash}`, {replace: true})
+              : navigate('/')
+          }}>
+            <img
+              src={`/${data.site.siteMetadata.logo}`}
+              alt={data.site.siteMetadata.title}
+            />
           </h1>
           <nav>
             <ul>
-              <Link activeClassName="active" to="/all">
-                <li>ALL</li>
-              </Link>
+              <li>
+                <Link activeClassName="active" to="/all">ALL</Link>
+              </li>
             </ul>
             <ul>
               {menuList.map(menu => (
-                <Link
-                  activeClassName="active"
-                  className={`${hash === menu.category ? 'active' : ''}`}
-                  partiallyActive={true}
-                  key={menu.index}
-                  to={`/${menu.category}`}
-                >
-                  <li>{menu.category.toUpperCase()}</li>
-                </Link>
+                <li key={menu.index}>
+                  <Link
+                    activeClassName="active"
+                    className={`${hash === menu.category ? 'active' : ''}`}
+                    partiallyActive={true}
+                    to={`/${menu.category}`}
+                  >
+                    {menu.category.toUpperCase()}
+                  </Link>
+                </li>
               ))}
             </ul>
           </nav>
