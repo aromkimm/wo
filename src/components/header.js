@@ -6,11 +6,15 @@ const Header = ({ menuList, background }) => {
 
   useEffect(() => {
     function handleActiveMenu () {
-      setHash(window.location.hash.split('#')[1])
+      const newHash = window.location.hash.split('#')[1] || null
+      if (hash !== newHash) {
+        setHash(newHash)
+      }
     }
+    handleActiveMenu()
     window.addEventListener('hashchange', handleActiveMenu)
     return () => window.removeEventListener('hashchange', handleActiveMenu)
-  }, [])
+  }, [hash])
 
   return (
     <StaticQuery
@@ -33,7 +37,7 @@ const Header = ({ menuList, background }) => {
                 : navigate('/')
             }}>
               <img
-                src={`/${data.site.siteMetadata.logo}`}
+                src={`${window.location.pathname.split[0] || ''}/${data.site.siteMetadata.logo}`}
                 alt={data.site.siteMetadata.title}
               />
             </button>
