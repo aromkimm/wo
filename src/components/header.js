@@ -26,15 +26,17 @@ const Header = ({ menuList, background }) => {
       `}
       render={data => (
         <header style={{ background: `${background ? '#fff' : null}` }}>
-          <h1 onClick={() => {
-            hash
-              ? navigate(`#${hash}`, {replace: true})
-              : navigate('/')
-          }}>
-            <img
-              src={`/${data.site.siteMetadata.logo}`}
-              alt={data.site.siteMetadata.title}
-            />
+          <h1>
+            <button onClick={() => {
+              hash
+                ? navigate(`#${hash}`, {replace: true})
+                : navigate('/')
+            }}>
+              <img
+                src={`/${data.site.siteMetadata.logo}`}
+                alt={data.site.siteMetadata.title}
+              />
+            </button>
           </h1>
           <nav>
             <ul>
