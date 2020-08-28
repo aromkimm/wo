@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { navigate, Link, StaticQuery, graphql } from 'gatsby'
+import logoPath from '../../static/logo.png'
 
 const Header = ({ menuList, background }) => {
   const [hash, setHash] = useState(null)
@@ -22,7 +23,6 @@ const Header = ({ menuList, background }) => {
         query {
           site {
             siteMetadata {
-              logo
               title
             }
           }
@@ -36,10 +36,7 @@ const Header = ({ menuList, background }) => {
                 ? navigate(`#${hash}`, {replace: true})
                 : navigate('/')
             }}>
-              <img
-                src={`${window.location.pathname.split[0] || ''}/${data.site.siteMetadata.logo}`}
-                alt={data.site.siteMetadata.title}
-              />
+              <img src={logoPath} alt={data.site.siteMetadata.title} />
             </button>
           </h1>
           <nav>

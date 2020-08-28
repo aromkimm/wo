@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
     title: 'WO',
     author: 'Saerom Kim',
-    logo: 'logo.png',
     description: `
     온라인에서 각종 상품을 판매할 경우, 가장 처음 노출되는 한 장의 이미지로
     최대한의 시선을 끌어야 한다. 그 때문에 상품 자체 이미지 외의 다른 시각적
