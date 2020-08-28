@@ -10,7 +10,7 @@ const Header = ({ menuList, background }) => {
     }
     window.addEventListener('hashchange', handleActiveMenu)
     return () => window.removeEventListener('hashchange', handleActiveMenu)
-  })
+  }, [])
 
   return (
     <StaticQuery

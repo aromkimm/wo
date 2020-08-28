@@ -48,7 +48,7 @@ const MainPage = ({ pageContext }) => {
               className="images"
               style={{
                 transition: 'opacity .5s ease-in-out',
-                opacity: `${state.popupClosed ? '' : 0.2}`
+                opacity: `${state.popupVisible ? 0.2 : ''}`
               }}
             >
               {pageContext.menuList.map(menu => {
@@ -73,9 +73,11 @@ const MainPage = ({ pageContext }) => {
             </ul>
           </section>
           {(() => {
-            if (!state.popupClosed) {
+            if (state.popupVisible) {
               return (
-                <Popup closePopup={() => dispatch({ type: 'CLOSE_POPUP' })} />
+                <Popup closePopup={() => {
+                  dispatch({ type: 'POPUP_VISIBLE', value: false })
+                }} />
               )
             }
           })()}

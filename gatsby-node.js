@@ -26,7 +26,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   actions.createPage({
     path: '/',
-    component: path.resolve('./src/pages/main.js'),
+    component: path.resolve('./src/templates/main.js'),
     context: {
       menuList,
     },
@@ -34,7 +34,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   actions.createPage({
     path: '/all',
-    component: path.resolve('./src/pages/listAll.js'),
+    component: path.resolve('./src/templates/listAll.js'),
     context: {
       menuList,
     },
@@ -44,7 +44,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const category = menu.category
     actions.createPage({
       path: `/${category}`,
-      component: path.resolve('./src/pages/list.js'),
+      component: path.resolve('./src/templates/list.js'),
       context: {
         menuList,
         category,
@@ -57,7 +57,7 @@ exports.createPages = async ({ actions, graphql }) => {
     const itemNameSplit = itemName.split(/\s/g)
     actions.createPage({
       path: `/${itemNameSplit[0].toLowerCase()}/${itemNameSplit[1]}`,
-      component: path.resolve('./src/pages/detail.js'),
+      component: path.resolve('./src/templates/detail.js'),
       context: {
         menuList,
         itemName,
